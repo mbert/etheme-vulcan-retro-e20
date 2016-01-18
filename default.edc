@@ -1,0 +1,88 @@
+#ifdef E17_PROFILE
+# if E17_PROFILE == LOWRES_PDA
+#  define SM "sm_"
+# elif E17_PROFILE == MEDIUMRES_PDA
+#  define SM "sm_"
+# elif E17_PROFILE == HIRES_PDA
+#  define SM "sm_"
+# elif E17_PROFILE == SLOW_PC
+#  define SM "sm_"
+# elif E17_PROFILE == MEDIUM_PC
+#  define SM
+# elif E17_PROFILE == FAST_PC
+#  define SM
+# endif
+#else
+# define SM
+#endif
+
+// theme api version. from 1.10 on we will check version to avoid
+// compat issues
+data.item: "version" "110";
+
+fonts {
+   font: "Vera.ttf"   "Edje-Vera";
+   font: "VeraBd.ttf" "Edje-Vera-Bold";
+}
+#if 0
+spectra {
+  spectrum {
+    name: "black_to_trans";
+    color: 0 0 0 255 1;
+    color: 0 0 0 0 1;
+  }
+}
+#endif
+
+collections {
+#include "default_background.edc"
+#include "default_battery.edc"
+#include "default_border.edc"
+#include "default_clock.edc"
+#include "default_gadman.edc"
+#include "default_ibar.edc"
+#include "default_menu.edc"
+#include "default_pager.edc"
+#include "default_resize.edc"
+#include "default_move.edc"
+#include "default_temperature.edc"
+#include "default_error.edc"
+#include "default_cpufreq.edc"
+#include "default_ibox.edc"
+#include "default_start.edc"
+#include "default_winlist.edc"
+#include "default_transitions.edc"
+#include "default_dialog.edc"
+#include "default_configure.edc"
+#include "default_icons.edc"
+#include "default_pointer.edc"
+#include "default_about.edc"
+#include "default_theme_about.edc"
+#include "default_entry.edc"
+#include "default_fileman.edc"
+#include "default_filesel.edc"   
+#include "default_check.edc"
+#include "default_radio.edc"
+#include "default_frame.edc"
+#include "default_button.edc"
+#include "default_label.edc"
+#include "default_scrollframe.edc"
+#include "default_ilist.edc"
+#include "default_tlist.edc"
+#include "default_slider.edc"
+#include "default_exebuf.edc"
+#include "default_desklock.edc"
+#include "default_textblock.edc"
+#include "default_shelf.edc"
+#include "default_preview.edc"
+#include "default_cslider.edc"
+#include "default_spectrum.edc"
+#include "default_color_well.edc"
+#include "default_sys.edc"
+#include "default_deskpreview.edc"
+#include "default_deskshow.edc"
+#include "default_winselector.edc"
+#include "default_forecasts.edc"
+#include "default_screenshot.edc"
+}
+
