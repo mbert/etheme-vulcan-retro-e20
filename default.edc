@@ -16,9 +16,13 @@
 # define SM
 #endif
 
-// theme api version. from 1.10 on we will check version to avoid
-// compat issues
-data.item: "version" "110";
+data {
+   item: "theme/name"     "Vulcan Retro";
+   item: "theme/version"  "1.0";
+   item: "theme/author"   "Ndjee, E20 port by mbert with help from Duma, background by rpil";
+   item: "theme/license"  "GPL";
+   item: "version"        "110"; // theme api version. from 1.10 on we will check version to avoid compat issues
+}
 
 fonts {
    font: "Vera.ttf"   "Edje-Vera";

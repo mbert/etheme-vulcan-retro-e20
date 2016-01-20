@@ -72,7 +72,8 @@ group {
 "<br><br><br>"
 "Released by Ndjee<br>"
 "mail : ndjee@free.fr<br>"
-"Recompiled for new version of E17 by <hilight>Alberto 'Duma' Verdoja</hilight>";
+"Recompiled for new version of E17 by <hilight>Alberto 'Duma' Verdoja</hilight><br>"
+"Ported to E19/E20 by <hilight>Martin 'mbert' Dietze</hilight>";
 	    }
 	 }
       }
