@@ -64,16 +64,12 @@ group {
 	       style:    "theme_about_style";
 	       min:      0 1;
 	       text: 
-"This is a pre-release of the<br>"
-"Vulcan-Retro theme for E-17. "
-"<br>"
-"It is based upon Cthulhain, Bling, and many "
-"other themes from E 15/16/17 and Gnome 2.x."
+"<hilight>Vulcan-Retro for E-19/20</hilight><br/>"
+"It is based upon Cthulhain, Bling, and others."
 "<br><br><br>"
-"Released by Ndjee<br>"
-"mail : ndjee@free.fr<br>"
-"Recompiled for new version of E17 by <hilight>Alberto 'Duma' Verdoja</hilight><br>"
-"Ported to E19/E20 by <hilight>Martin 'mbert' Dietze</hilight>";
+"Released by<br/><hilight>Ndjee</hilight> &lt;ndjee@free.fr&gt;<br>"
+"Ported to E19/E20 by<br/><hilight>Martin 'mbert' Dietze</hilight><br/>"
+"with help from<br/><hilight>Alberto 'Duma' Verdoja</hilight><br>";
 	    }
 	 }
       }
