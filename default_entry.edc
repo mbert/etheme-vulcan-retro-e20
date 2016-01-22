@@ -77,14 +77,14 @@ group {
 }
 
 group { name: "e/widgets/entry/text";
-      styles {
+      /*styles {
          style { name: "entry_textblock_style";
             base: "font=Sans font_size=10 color=#ffffffff style=shadow,bottom shadow_color=#00000000 text_class=entry color_classs=entry_text";
          }
          style { name: "entry_textblock_disabled_style";
             base: "font=Sans font_size=10 color=#151515 style=shadow,bottom shadow_color=#ffffff19 text_class=entry color_class=entry_text_disabled";
          }
-      }
+      }*/
    parts {
 	 part { name: "e.text.text"; type: TEXTBLOCK;
 	 mouse_events: 1;
