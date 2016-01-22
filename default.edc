@@ -39,6 +39,7 @@ spectra {
 #endif
 
 collections {
+//#include "elm/button.edc"
 #include "default_background.edc"
 #include "default_battery.edc"
 #include "default_border.edc"
