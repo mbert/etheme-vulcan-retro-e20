@@ -39,6 +39,7 @@ spectra {
 #endif
 
 collections {
+#include "fonts.edc"
 
 #include "elm/macros.edc"
 #include "elm/button.edc"
@@ -143,4 +144,5 @@ collections {
 #include "default_winselector.edc"
 #include "default_forecasts.edc"
 #include "default_screenshot.edc"
+#include "default_taskbar.edc"
 }
