@@ -449,7 +449,7 @@ group { name: "e/modules/everything/list";
          }
       }
       part { name: "e.text.label"; type: TEXT;
-         effect: OUTLINE_SOFT_SHADOW;
+         effect: SHADOW;
          scale: 1;
          description { state: "default" 0.0;
             fixed: 0 1;
@@ -1599,7 +1599,7 @@ group { name: "e/modules/everything/thumbview/item/list";
             rel2.to_x: "e.text.detail";
             color: 255 255 255 255;
             color_class: "ilist_item";
-            text { font: FN; size: 10;
+            text { font: FN; size: 12;
                min: 0 1; 
                align: 0.0 0.5;
                text_class: "ilist_item";
@@ -1620,7 +1620,7 @@ group { name: "e/modules/everything/thumbview/item/list";
             rel2.to: "e.text.label";
             color: 0 0 0 128;
             color_class: "ilist_item_selected";
-            text { font: FN; size: 12;
+            text { font: "FN:style=Bold"; size: 12;
                min: 0 1; 
               text_source: "e.text.label";
               align: 0.0 0.5;
