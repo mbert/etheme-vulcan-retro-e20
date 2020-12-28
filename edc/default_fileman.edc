@@ -3,6 +3,10 @@ images {
    image: "e17_ilist_bg1.png" COMP;
    image: "e17_fileman_thumb_bg.png" COMP;
    image: "e17_button.png" COMP;
+   image: "e17_fileman_copy.png" COMP;
+   image: "e17_fileman_ask.png" COMP;
+   image: "e17_fileman_move.png" COMP;
+   image: "1pixel.png" COMP;
 }
 
 group {
@@ -149,13 +153,13 @@ group {
       program {
          signal: "e,toolbar,left"; source: "e";
          action: STATE_SET "tb_left" 0.0;
-         target: "e.swallow.toolbar";
+         //~ target: "e.swallow.toolbar";
          target: "region";
       }
       program {
          signal: "e,toolbar,right"; source: "e";
          action: STATE_SET "tb_right" 0.0;
-         target: "e.swallow.toolbar";
+         //~ target: "e.swallow.toolbar";
          target: "region";
       }
       program {
@@ -1434,6 +1438,67 @@ group {
 	    state: "default" 0.0;
 	    color: 0 0 0 0;
 	 }
+      }
+      part {
+         name:          "dnd_action";
+         type:          IMAGE;
+         mouse_events:  0;
+         repeat_events: 0;
+         description {
+            state:      "default" 0.0;
+            color:      0 0 0 0;
+            image {
+               normal:  "e17_fileman_copy.png";
+            }
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "visible" 0.0;
+            aspect:     1.0 1.0;
+            aspect_preference: BOTH;
+            align: 1.0 1.0;
+            rel1 {
+               relative: 0.75 0.0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+            }
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "copy" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_copy.png";
+            }
+         }
+         description {
+            state:      "ask" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_ask.png";
+            }
+         }
+         description {
+            state:      "move" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_move.png";
+            }
+         }
+      }
+      part {
+         name: "e.swallow.entry";
+         type: SWALLOW;
+         description {
+            state: "default" 0.0;
+            rel1.to: "e.text.label";
+            rel2.to: "e.text.label";
+         }
       }
    }
    programs {
@@ -3874,6 +3939,56 @@ group {
 	    color:      0 0 0 0;
 	 }
       }         
+      part {
+         name:          "dnd_action";
+         type:          IMAGE;
+         mouse_events:  0;
+         repeat_events: 0;
+         description {
+            state:      "default" 0.0;
+            color:      0 0 0 0;
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "visible" 0.0;
+            aspect:     1.0 1.0;
+            aspect_preference: BOTH;
+            align: 1.0 1.0;
+            min: 24 24;
+            rel1 {
+               relative: 0.75 0.0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+            }
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "copy" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_copy.png";
+            }
+         }
+         description {
+            state:      "ask" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_ask.png";
+            }
+         }
+         description {
+            state:      "move" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_move.png";
+            }
+         }
+      }
    }
    programs {
       program {
@@ -3881,7 +3996,7 @@ group {
 	 signal: "e,state,selected"; 
 	 source: "e"; 
 	 action: STATE_SET "active" 0.0;
-	 target: "e.text.label"; 
+	 //~ target: "e.text.label"; 
 	 target: "icon_overlay";
       } 
       program { 
@@ -4196,14 +4311,86 @@ group {
 	    color:      0 0 0 0;
 	 }
       }         
+      part {
+         name:          "dnd_action";
+         type:          IMAGE;
+         mouse_events:  0;
+         repeat_events: 0;
+         description {
+            state:      "default" 0.0;
+            color:      0 0 0 0;
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "visible" 0.0;
+            aspect:     1.0 1.0;
+            aspect_preference: BOTH;
+            align: 1.0 1.0;
+            min: 24 24;
+            rel1 {
+               relative: 0.75 0.0;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "copy" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_copy.png";
+            }
+         }
+         description {
+            state:      "ask" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_ask.png";
+            }
+         }
+         description {
+            state:      "move" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_move.png";
+            }
+         }
+      }
    }
    programs {
+      program {
+         name:   "ask";
+         signal: "e,state,ask";
+         source: "e";
+         action: STATE_SET "ask" 0.0;
+         target: "dnd_action";
+      }
+      program {
+         name:   "move";
+         signal: "e,state,move";
+         source: "e";
+         action: STATE_SET "move" 0.0;
+         target: "dnd_action";
+      }
+      program {
+         name:   "copy";
+         signal: "e,state,copy";
+         source: "e";
+         action: STATE_SET "copy" 0.0;
+         target: "dnd_action";
+      }
       program {
 	 name:   "active"; 
 	 signal: "e,state,selected"; 
 	 source: "e"; 
 	 action: STATE_SET "active" 0.0;
-	 target: "e.text.label"; 
+	 //~ target: "e.text.label"; 
 	 target: "icon_overlay";
       } 
       program { 
@@ -7117,14 +7304,85 @@ group {
 	    color:      0 0 0 0;
 	 }
       }         
+      part {
+         name:          "dnd_action";
+         type:          IMAGE;
+         mouse_events:  0;
+         repeat_events: 0;
+         description {
+            state:      "default" 0.0;
+            color:      0 0 0 0;
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "visible" 0.0;
+            aspect:     1.0 1.0;
+            aspect_preference: BOTH;
+            align: 1.0 1.0;
+            rel1 {
+               relative: 0.75 0.75;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+               offset: -1 -1;
+            }
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "copy" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_copy.png";
+            }
+         }
+         description {
+            state:      "ask" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_ask.png";
+            }
+         }
+         description {
+            state:      "move" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_move.png";
+            }
+         }
+      }
    }
    programs {
+      program {
+         name:   "ask";
+         signal: "e,state,ask";
+         source: "e";
+         action: STATE_SET "ask" 0.0;
+         target: "dnd_action";
+      }
+      program {
+         name:   "move";
+         signal: "e,state,move";
+         source: "e";
+         action: STATE_SET "move" 0.0;
+         target: "dnd_action";
+      }
+      program {
+         name:   "copy";
+         signal: "e,state,copy";
+         source: "e";
+         action: STATE_SET "copy" 0.0;
+         target: "dnd_action";
+      }
       program {
 	 name:   "active"; 
 	 signal: "e,state,selected"; 
 	 source: "e"; 
 	 action: STATE_SET "active" 0.0;
-	 target: "e.text.label"; 
+	 //~ target: "e.text.label"; 
 	 target: "icon_overlay";
       } 
       program { 
@@ -7438,14 +7696,84 @@ group {
 	    color:      0 0 0 0;
 	 }
       }         
+      part {
+         name:          "dnd_action";
+         type:          IMAGE;
+         mouse_events:  0;
+         repeat_events: 0;
+         description {
+            state:      "default" 0.0;
+            color:      0 0 0 0;
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "visible" 0.0;
+            aspect:     1.0 1.0;
+            aspect_preference: BOTH;
+            align: 1.0 1.0;
+            rel1 {
+               relative: 0.75 0.75;
+            }
+            rel2 {
+               relative: 1.0 1.0;
+            }
+            image {
+               normal:  "1pixel.png";
+            }
+         }
+         description {
+            state:      "copy" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_copy.png";
+            }
+         }
+         description {
+            state:      "ask" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_ask.png";
+            }
+         }
+         description {
+            state:      "move" 0.0;
+            inherit:    "visible" 0.0;
+            image {
+               normal:  "e17_fileman_move.png";
+            }
+         }
+      }
    }
    programs {
+      program {
+         name:   "ask";
+         signal: "e,state,ask";
+         source: "e";
+         action: STATE_SET "ask" 0.0;
+         target: "dnd_action";
+      }
+      program {
+         name:   "move";
+         signal: "e,state,move";
+         source: "e";
+         action: STATE_SET "move" 0.0;
+         target: "dnd_action";
+      }
+      program {
+         name:   "copy";
+         signal: "e,state,copy";
+         source: "e";
+         action: STATE_SET "copy" 0.0;
+         target: "dnd_action";
+      }
       program {
 	 name:   "active"; 
 	 signal: "e,state,selected"; 
 	 source: "e"; 
 	 action: STATE_SET "active" 0.0;
-	 target: "e.text.label"; 
+	 //~ target: "e.text.label"; 
 	 target: "icon_overlay";
       } 
       program { 

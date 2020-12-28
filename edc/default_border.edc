@@ -2514,7 +2514,7 @@ group {
 	 target:  "minimize_shadow1";
 	 target:  "minimize_shadow2";
 	 target:  "minimize_bg";
-	 target:  "minimize_detail";
+	 //~ target:  "minimize_detail";
 	 after:   "minimize_passive";
 	 after:   "minimize_passive_p";
       }
