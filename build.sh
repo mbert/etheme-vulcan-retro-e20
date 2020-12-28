@@ -1,2 +1,2 @@
 #!/bin/sh
-edje_cc $@ -id . -fd . default.edc -o Vulcan-Retro.edj
+edje_cc $@ -id . -fd . vulcan-retro.edc -o Vulcan-Retro.edj
