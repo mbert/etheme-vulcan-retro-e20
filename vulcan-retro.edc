@@ -129,6 +129,7 @@ collections {
 #include "edc/default_frame.edc"
 #include "edc/default_button.edc"
 #include "edc/default_label.edc"
+#include "edc/default_mem.edc"
 #include "edc/default_scrollframe.edc"
 #include "edc/default_ilist.edc"
 #include "edc/default_tlist.edc"
