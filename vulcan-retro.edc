@@ -18,7 +18,7 @@
 
 data {
    item: "theme/name"     "Vulcan Retro";
-   item: "theme/version"  "0.9.4";
+   item: "theme/version"  "0.9.5";
    item: "theme/author"   "Ndjee, E20 port by mbert with help from Duma and the_waiter, background and Elementary code by rpil";
    item: "theme/license"  "GPL";
    item: "version"        "110"; // theme api version. from 1.10 on we will check version to avoid compat issues
@@ -150,4 +150,6 @@ collections {
 #include "edc/default_forecasts.edc"
 #include "edc/default_screenshot.edc"
 #include "edc/default_taskbar.edc"
+#include "edc/default_xkbswitch.edc"
+#include "edc/default_notification.edc"
 }
