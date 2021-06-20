@@ -356,7 +356,7 @@ group {
 	    min:      0 1;
 	    rel1 {
 	       relative: 1.0  0.0;
-	       offset:   9    6;
+	       offset:   0    0;
 	       to:       "t1";
 	    }
 	    rel2 {

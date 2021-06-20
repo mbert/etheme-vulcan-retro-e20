@@ -1,0 +1,8 @@
+Package: enlightenment-theme-vulcan-retro-e20
+Version: @VERSION@
+Section: misc
+Priority: optional
+Depends: enlightenment (>=0.20)
+Architecture: all
+Maintainer: Martin Dietze <mdietze@gmail.com>
+Description: Vulcan-Retro Theme for Enlightenment 20
