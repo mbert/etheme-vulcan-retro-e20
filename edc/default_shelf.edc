@@ -8,7 +8,6 @@ images {
    image: "e17_shelf_bg3_h.png" COMP;
    image: "e17_shelf_bg3_v.png" COMP;
    image: "e17_ibar_bg_h.png" COMP;
-   image: "e17_ibar_bg_hi.png" COMP;
    image: "e17_ibar_over_h.png" COMP;
    image: "e17_ibar_bg_h3.png" COMP;
    image: "e17_ibar_over_h3.png" COMP;

@@ -82,7 +82,6 @@ images {
    image: "e17_wallpaper_center.png" COMP;
    image: "e17_wallpaper_screen.png" COMP;
    image: "e17_wallpaper_center_flat.png" COMP;
-   image: "e17_wallpaper_grad_screen.png" COMP;
    image: "e17_icon_e_exit.png" COMP;
    image: "e17_icon_e_reset.png" COMP;
    image: "e17_icon_logout.png" COMP;

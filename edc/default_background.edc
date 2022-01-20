@@ -1,5 +1,5 @@
 images {
-   image: "e17_fyrE-red.png" COMP;
+   image: "Scaled.png" COMP;
 }
 group { name: "e/desktop/background";
          image: "Scaled.png" COMP;
