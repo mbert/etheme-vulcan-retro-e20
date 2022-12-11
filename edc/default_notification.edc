@@ -127,6 +127,7 @@ group { name: "e/modules/notification/main";
          }
       }
       part { name: "bodyclip"; type: RECT;
+         scale: 1;
          description { state: "default" 0.0;
             rel2.offset: -13 -13;
             min: 220 80;
@@ -179,6 +180,22 @@ group { name: "e/modules/notification/main";
             visible: 0;
          }
       }
+      part { name: "notification.swallow.desktop_icon"; type: SWALLOW; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            align: 0.0 0.0;
+            aspect: 1.0 1.0; aspect_preference: BOTH;
+            rel1.to_x: "base";
+            rel1.to_y: "notification.text.title";
+            rel1.offset: 12 0;
+            rel2.to: "notification.text.title";
+            rel2.offset: 12 -1;
+            rel2.relative: 0.0 1.0;
+            min: 15 15;
+            fixed: 1 1;
+            offscale;
+         }
+      }
       part { name: "notification.text.title"; type: TEXT; mouse_events: 0;
          clip_to: "titleclip";
          effect: SHADOW BOTTOM;
@@ -201,6 +218,23 @@ group { name: "e/modules/notification/main";
                text_class: "notification_title";
             }
             fixed: 0 1;
+         }
+      }
+      part { name: "notification.swallow.actions"; type: SWALLOW;
+         scale: 1;
+         description { state: "default" 0.0;
+            align: 0.5 1.0;
+            rel.to: "base";
+            rel1.relative: 0.0 1.0;
+            rel1.offset: -12 0;
+            rel2.offset: -13 0;
+            offscale;
+            visible: 0;
+         }
+         description { state: "visible" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            min: 40 20;
          }
       }
       part { name: "close";
@@ -259,5 +293,34 @@ group { name: "e/modules/notification/main";
 //      program {
 //         signal: "notification,deleted"; source: "notification";
 //      }
+   }
+}
+group { name: "e/modules/notification/action";
+   parts {
+      group { "act_btn"; source: "e/widgets/button";
+         desc { "default";
+            rel1.relative: 0.2 0.2;
+            rel2.relative: 0.8 0.4;
+            rel1.offset:   10  20;
+            rel2.offset:   20 -15;
+            min: SOURCE;
+            max: 120 20;
+         }
+      }
+      alias: "e.text.label" "act_btn:e.text.label";
+
+      part { name: "event"; type: RECT;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel.to: "act_btn";
+            color: 0 0 0 0; // no cc
+            min: 40 20;
+         }
+      }
+   }
+   programs {
+      program { signal: "mouse,clicked,1"; source: "event";
+         action: SIGNAL_EMIT "e,action,clicked" "e";
+      }
    }
 }
